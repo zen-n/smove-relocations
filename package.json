@@ -16,6 +16,7 @@
     "typescript": "3.6.3"
   },
   "dependencies": {
+    "@types/js-combinatorics": "^0.5.31",
     "array-permutation": "^0.2.0",
     "js-combinatorics": "^0.5.4"
   }
