@@ -1,0 +1,22 @@
+{
+  "name": "smove-relocations",
+  "version": "1.0.0",
+  "description": "Smove relocations challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zenon Colaco",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "12.7.8",
+    "ts-node": "8.4.1",
+    "tslint": "^5.20.0",
+    "typescript": "3.6.3"
+  },
+  "dependencies": {
+    "array-permutation": "^0.2.0",
+    "js-combinatorics": "^0.5.4"
+  }
+}
