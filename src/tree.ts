@@ -1,21 +1,13 @@
 import { Booking, StartEndMap, Solution } from "./types";
 
-// let minRelocations = Number.MAX_SAFE_INTEGER;
-// let optimal = {};
-let ops = 0;
-
 export function tree(bookings: Booking[]): Solution {
     const map = transformToStartEndMap(bookings);
     const optimalSolution: Solution = {bookingSet: [], relocations: Number.MAX_SAFE_INTEGER };
     traverse(deepClone(map), [], -1, optimalSolution);
-    console.log(`traverse booking set: ${JSON.stringify(optimalSolution.bookingSet)}`)
-    console.log(`traverse booking relocations: ${JSON.stringify(optimalSolution.relocations)}`);
-    console.log(ops);
-    return {bookingSet: bookings, relocations: 999};
+    return {bookingSet: optimalSolution.bookingSet, relocations: optimalSolution.relocations};
 }
 
 function traverse (map: StartEndMap, currentBookings: Booking[], currentRelocations: number, optimalSolution: Solution): void {
-    ops++;
     // If the solution is already worse than the the currently existing one, bail
     if (currentRelocations >= optimalSolution.relocations){
         return;
@@ -23,9 +15,7 @@ function traverse (map: StartEndMap, currentBookings: Booking[], currentRelocati
 
     // This is the end condition - when there are no more bookings to add
     if (Object.keys(map).length === 0) {
-        console.log(ops);
         if (currentRelocations < optimalSolution.relocations){
-            console.log("new optimal solution found " + currentRelocations);
             optimalSolution.relocations = currentRelocations;
             optimalSolution.bookingSet = currentBookings;
         }

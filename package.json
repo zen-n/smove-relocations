@@ -5,19 +5,22 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Zenon Colaco",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "24.0.18",
+    "@types/js-combinatorics": "0.5.31",
     "@types/node": "12.7.8",
+    "jest": "24.9.0",
+    "ts-jest": "24.1.0",
     "ts-node": "8.4.1",
-    "tslint": "^5.20.0",
+    "tslint": "5.20.0",
     "typescript": "3.6.3"
   },
   "dependencies": {
-    "@types/js-combinatorics": "^0.5.31",
-    "array-permutation": "^0.2.0",
-    "js-combinatorics": "^0.5.4"
+    "array-permutation": "0.2.0",
+    "js-combinatorics": "0.5.4"
   }
 }
