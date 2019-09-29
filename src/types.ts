@@ -9,3 +9,6 @@ export interface Solution {
     relocations: number,
 }
 
+export interface StartEndMap {
+    [start: string]: Booking[],
+}
