@@ -1,8 +1,14 @@
 import { Booking, Solution } from "./types";
-import { IGenerator } from "js-combinatorics";
+import { IGenerator, permutation } from "js-combinatorics";
 
-export function brute(bookings: Booking[]): Solution{
-    const permutations: IGenerator<Booking[]> = comb.permutation(bookings, 6);
+/**
+ * Reduce the number of relocations for a set of bookings using a brute force/permutations strategy.
+ * O(n!) time complexity
+ * @param bookings unoptimised array of bookings
+ * @returns a solution containing an optimal set of bookings and the number of relocations
+ */
+export function brute(bookings: Booking[]): Solution {
+    const permutations: IGenerator<Booking[]> = permutation(bookings, bookings.length);
     let optimalBookings: Booking[];
     let minRelocations = Number.MAX_SAFE_INTEGER;
     permutations.forEach((bookingSet) => {
