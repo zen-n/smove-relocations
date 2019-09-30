@@ -10,6 +10,8 @@ This is a submission for the [smove booking ordering challenge](https://github.c
 2. Run `npm install` in the main directory of the project
 ### Run
 1. `npm start <input file location> <output file location>`
+
+If no input/outputs are provided `data/bookings.json` and `results.json` will be used
 ### Test
 Note that the test suite only covers the tree traversal strategy 
 1. `npm test`
@@ -36,4 +38,7 @@ Tweaks to reduce the chance of hitting the worst case in practice:
 - Use worker threads - allows for parallel execution, but would also allow for timeouts so we can return the best solution _currently_ found. Even for large numbers of bookings, we can find a better-than-random but non-optimal solution pretty quickly so it would be useful to return.
 - Deep cloning the object arrays eats up a lot of time, this data structure could be simplified
 - Filter non-unique bookings
-- The way the recursive function returns the solution is not intuitive
+- The way the recursive function "returns" the solution is not intuitive
+
+ #### Real world performance
+ Running on an old 2013 i5 MacBook, up to 11 bookings run in < 10 seconds and 12 bookings < 90 seconds. Higher numbers of bookings get impractically slow with the current implementation, but find a close-to-optimal solution within a few seconds. As an example, for 18 bookings it will find a solution for 3 relocations in < 10 seconds. It won't actually write this to file, but will print it out (because I haven't made it write each solution incrementally or implemented timeouts).
