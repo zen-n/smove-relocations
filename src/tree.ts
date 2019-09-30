@@ -2,7 +2,7 @@ import { Booking, BookingIndex, Solution } from "./types";
 
 /**
  * Reduce the number of relocations for a set of bookings using a tree traversal strategy
- * with some added optimizations. O(m^(n+1)) worst case time complexity.
+ * with some added optimizations. O(n!) worst case time complexity.
  * @param bookings un-optimized array of bookings
  * @returns a solution containing an optimal set of bookings and the number of relocations
  *          -1 relocations indicates that no solution was found

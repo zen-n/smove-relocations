@@ -28,7 +28,7 @@ This fell apart quickly. It has a worst case time complexity of `O(n!)` (where `
 #### Tree traversal
 This models possible combinations of the bookings as a tree structure. This reduces the amount of repeated operations, since nodes closer to the ends share common branches.
 
-Worst case time complexity is `O(m^(n+1))` (where `n` is the number of bookings and `m` is the average number of end locations per start location). Space complexity is `O(n)` as the implementation is depth first.
+Worst case time complexity is still `O(n!)` however this is less likely to occur in practice (explained below). Space complexity is `O(n)` as the implementation is depth first.
 
 Tweaks to reduce the chance of hitting the worst case in practice:
  - Branches get pruned once too many relocations happen in a proposed sequence
