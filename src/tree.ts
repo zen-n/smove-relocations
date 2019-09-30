@@ -83,8 +83,10 @@ function transformToStartEndMap(bookings: Booking[]): StartIndex {
     return map;
 }
 
-function deepClone<T>(data: T): T{
-    // This clone is a bit yuck, but there are no functions or dates or anything 
-    // particularly interesting inside the maps so we can get away with it
-    return JSON.parse(JSON.stringify(data));
+function deepClone(data: any): any {
+    const newObj: any = {};
+    Object.keys(data).forEach((key) => {
+        newObj[key] = [...data[key]];
+    });
+    return newObj;
 }
