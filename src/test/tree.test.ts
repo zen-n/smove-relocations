@@ -1,7 +1,11 @@
-import { Booking, Solution } from "../types";
 import { tree } from "../tree";
+import { Booking, Solution } from "../types";
 
-describe("Minimise booking relocations using the tree strategy", () => {
+console.debug = () => {
+    // Keeps the test output pretty
+};
+
+describe("Minimize booking relocations using the tree strategy", () => {
     it("should return a valid solution given a single booking", () => {
         const bookings: Booking[] = [{id: 1, start: "a", end: "b"}];
         const solution: Solution = tree(bookings);
@@ -21,7 +25,7 @@ describe("Minimise booking relocations using the tree strategy", () => {
                                      {id: 3, start: "a", end: "c"}];
         const solution: Solution = tree(bookings);
 
-        expect(solution).toEqual({bookingSet: [{id: 3, start: "a", end: "c"}, {id: 2, start: "c", end: "a"}, 
+        expect(solution).toEqual({bookingSet: [{id: 3, start: "a", end: "c"}, {id: 2, start: "c", end: "a"},
                                                {id: 1, start: "a", end: "b"}], relocations: 0});
     });
 
@@ -30,7 +34,7 @@ describe("Minimise booking relocations using the tree strategy", () => {
                                      {id: 3, start: "b", end: "c"}];
         const solution: Solution = tree(bookings);
 
-        expect(solution).toEqual({bookingSet: [{id: 1, start: "a", end: "b"}, {id: 3, start: "b", end: "c"}, 
+        expect(solution).toEqual({bookingSet: [{id: 1, start: "a", end: "b"}, {id: 3, start: "b", end: "c"},
                                                {id: 2, start: "c", end: "a"}], relocations: 0});
     });
 
