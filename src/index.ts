@@ -10,20 +10,22 @@ if (process.argv[2] === "help") {
 
 const defaultInputLocation = "data/bookings.json";
 const defaultOutputLocation = "results.json";
-const inputFileLocation = process.argv[2];
-const outputFileLocation = process.argv[3];
+let inputFileLocation = process.argv[2];
+let outputFileLocation = process.argv[3];
 
 if (!inputFileLocation) {
+    inputFileLocation = defaultInputLocation;
     console.warn(`No input file location provided, defaulting to ${defaultInputLocation}`);
 }
 if (!outputFileLocation) {
+    outputFileLocation = defaultOutputLocation;
     console.warn(`No output file location provided, defaulting to ${defaultOutputLocation}`);
 }
 
 let data: Booking[] = [];
 
 try {
-    data = JSON.parse(fs.readFileSync(inputFileLocation ||  defaultInputLocation, "utf8"));
+    data = JSON.parse(fs.readFileSync(inputFileLocation, "utf8"));
 } catch (error) {
     console.error(error.message);
     process.exit(1);
@@ -36,6 +38,7 @@ console.debug(`Optimal bookings: ${JSON.stringify(solution.bookingSet)}`);
 writeToFile(solution.bookingSet);
 
 function writeToFile(bookings: Booking[]) {
-    fs.writeFileSync(outputFileLocation || defaultOutputLocation,
+    fs.writeFileSync(outputFileLocation,
         JSON.stringify(bookings.map((booking) => booking.id)));
+    console.info(`Solution written to ${outputFileLocation}`);
 }
