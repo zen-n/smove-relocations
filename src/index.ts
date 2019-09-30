@@ -13,10 +13,10 @@ const defaultOutputLocation = "results.json";
 const inputFileLocation = process.argv[2];
 const outputFileLocation = process.argv[3];
 
-if (inputFileLocation) {
+if (!inputFileLocation) {
     console.warn(`No input file location provided, defaulting to ${defaultInputLocation}`);
 }
-if (outputFileLocation) {
+if (!outputFileLocation) {
     console.warn(`No output file location provided, defaulting to ${defaultOutputLocation}`);
 }
 

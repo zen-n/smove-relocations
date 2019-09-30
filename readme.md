@@ -15,11 +15,11 @@ Note that the test suite only covers the tree traversal strategy
 1. `npm test`
 
 ## Ramblings
-I decided to pick off this challenge as it looked kinda fun since I don't really get to do these kind of puzzle style questions in my usual work. I had mild regret 2 hours into this as I realized it was more complex than I really wanted it to be but I was half expecting this ⚰🤕.
+I decided to pick this challenge as it looked kinda fun since I don't really get to do these kind of puzzle style questions at my day job. I had mild regret 2 hours into this as I realized it was more complex than I really wanted it to be, but I was half expecting this 🤕.
 
 ### Algorithms
 #### Brute
-My first cut - just a baseline/sanity check than a real implementation. Check every permutation and pick the one with the lowest relocations. This implementation is disabled out of the box, but can be enabled by un-commenting `const solution = brute(data);` in `index.ts`
+My first cut - a baseline/sanity check rather than a real implementation. Check every permutation and pick the one with the lowest relocations. This implementation is disabled out of the box, but can be enabled by un-commenting `const solution = brute(data);` in `index.ts`
 
 This fell apart quickly. It has a worst case time complexity of `O(n!)` (where `n` is the number of bookings). Space complexity remained at `O(n)` because the permutations are generated iteratively.
 

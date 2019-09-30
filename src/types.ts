@@ -1,14 +1,14 @@
 export interface Booking {
-    id: number,
-    start: string,
-    end: string
+    id: number;
+    start: string;
+    end: string;
 }
 
 export interface Solution {
-    bookingSet: Booking[],
-    relocations: number,
+    bookingSet: Booking[];
+    relocations: number;
 }
 
-export interface StartIndex {
-    [start: string]: Booking[],
+export interface BookingIndex {
+    [key: string]: Booking[];
 }

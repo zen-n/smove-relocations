@@ -1,32 +1,32 @@
 [
-  {
-    "id": 5,
-    "start": "w",
-    "end": "y"
-  },
-  {
-    "id": 3,
-    "start": "y",
-    "end": "z"
-  },
-  {
-    "id": 2,
-    "start": "z",
-    "end": "x"
-  },
-  {
-    "id": 1,
-    "start": "x",
-    "end": "y"
-  },
-  {
-    "id": 4,
-    "start": "y",
-    "end": "z"
-  },
-  {
-      "id": 6,
-      "start": "z",
-      "end": "w"
+    {
+        "id": 5,
+        "start": "w",
+        "end": "y"
+    },
+    {
+        "id": 3,
+        "start": "y",
+        "end": "z"
+    },
+    {
+        "id": 2,
+        "start": "z",
+        "end": "x"
+    },
+    {
+        "id": 1,
+        "start": "x",
+        "end": "y"
+    },
+    {
+        "id": 4,
+        "start": "y",
+        "end": "z"
+    },
+    {
+        "id": 6,
+        "start": "z",
+        "end": "w"
     }
-  ]
+]
